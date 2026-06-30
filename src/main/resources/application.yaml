@@ -9,6 +9,17 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: fals
+    healthcheck:
+      enabled: true
   server:
     enable-self-preservation: false
     eviction-interval-timer-in-ms: 10000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
